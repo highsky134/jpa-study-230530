@@ -38,7 +38,7 @@ public class Post {
     @UpdateTimestamp
     private LocalDateTime updateDate; // 수정시간
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "post", orphanRemoval = true)
     @Builder.Default // @Builder 사용시 초기화는 없기때문에 지정해 주려면 .Default 사용
     private List<HashTag> hashTags = new ArrayList<>();
 
